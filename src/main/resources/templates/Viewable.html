@@ -1,0 +1,165 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+
+    <style>
+        /* Add your CSS styles here */
+        #toolForm {
+            width: 2000px; /* Set the width of the form as needed */
+            margin-left: 10px; /* Center the form */
+            margin-top: 0px;
+            display: flex; /* Use flexbox for the form */
+            flex-wrap: wrap; /* Allow items to wrap to the next line if the container is too narrow */
+     		margin: 0px;
+        }
+
+        label {
+            width: 80px; /* Set the width of the label as needed */
+            margin-bottom: 0px; /* Add some space between labels and input elements */
+            margin-right: 0;
+           /* font-weight: bold;  Make labels bold, if desired */
+            border: 1px solid #000; /* Add border to labels */
+            padding: 5px; /* Add padding to labels for better appearance */
+            box-sizing: border-box; /* Include padding and border in the width */
+        }
+
+        input[type="text"] {
+            width: 200px; /* Set a fixed width for text boxes */
+            border: 1px solid #000; /* Add border to text boxes */
+            padding: 5px; /* Add padding to text boxes for better appearance */
+            margin-bottom: 0px; /* Add some space below text boxes */
+            box-sizing: border-box; /* Include padding and border in the width */
+            margin-right: 0;
+        }
+          table {
+            width: 1890px;
+            border-collapse: collapse;
+            margin-bottom: 20px;
+        }
+
+        th, td {
+            padding: 12px;
+            text-align: left;
+            border: 1px solid #ddd;
+        }
+
+        th {
+            background-color: #f2f2f2;
+        }
+
+        tr:hover {
+            background-color: #f5f5f5;
+        }
+
+        thead tr:first-child th {
+            border-top: none;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="toolForm">
+        <label for="adNo1" style="width: 300px;">AD.No :</label>
+        <input type="text" id="adNo1" style="width: 250px;" value="${toolData.adNo}">
+        
+        <label for="partNo" style="width: 250px; text-align: center;">Part No :</label>
+        
+        <label for="partNo" style="width: 1090px; text-align: center;">Characteristics of Brouch Tool  :</label>
+        
+    </form>
+    <form id="toolForm">
+        <label for="srNo1" style="width: 300px;">Sr No Of Brouch :</label>
+        <input type="text" id="srNo1" style="width: 250px;" value="${toolData.srNo}">
+        
+        <input type="text" for="partNo" style="width: 250px;"></input>
+        
+        <label for="noOfStart" style="width: 150px;">No Of Start :</label>
+        <input type="text" id="noOfStart" style="width: 200px;" value="${toolData.noOfStart}">
+        
+         <label for="materialOfBrouch" style="width: 190px;">Material Of Brouch :</label>
+        <input type="text" id="materialOfBrouch" style="width: 200px;" value="${toolData.materialOfBrouch}">
+        
+        <label for="coating" style="width: 150px;">Coating :</label>
+        <input type="text" id="coating" style="width: 200px;" value="${toolData.coating}">
+        
+    </form>
+     <form id="toolForm">
+        <label for="supplierNo" style="width: 300px;">Supplier Number :</label>
+        <input type="text" id="supplierNo" style="width: 250px;" value="${toolData.supplierNo}">
+        
+        <input type="text" for="partNo" style="width: 250px;"></input>
+        
+         <label for="pullLoad" style="width: 150px;">Pull Load :</label>
+        <input type="text" id="pullLoad" style="width: 200px;" value="${toolData.pullLoad}">
+      
+        <label for="componentMaterial" style="width: 190px;">Component Material :</label>
+        <input type="text" id="componentMaterial" style="width: 550px;" value="${toolData.componentMaterial}">
+        
+        
+    </form>
+    
+     <form id="toolForm">
+        <label for="supplierName" style="width: 300px;">Supplier Name :</label>
+        <input type="text" id="supplierName"style="width: 250px;" value="${toolData.supplierName}">
+        
+        <input type="text" for="partNo" style="width: 250px;"></input>
+        
+          <label for="oalOfBrouch" style="width: 150px;">OAL of Brouch :</label>
+        <input type="text" id="oalOfBrouch" style="width: 200px;" value="${toolData.oalOfBrouch}">
+        
+        
+        <label for="landWidth" style="width: 190px;">Land Width : Body/ Shell</label>
+        <input type="text" id="landWidth" style="width: 550px;" value="${toolData.landWidth}">
+        
+    </form>
+
+<form id="toolForm">
+        <label for="dateOfProcurement" style="width: 300px;">Supplier Name :</label>
+        <input type="text" id="dateOfProcurement" style="width: 250px;" value="${toolData.dateOfProcurement}">
+        
+        <input type="text" for="partNo" style="width: 250px;"></input>
+        
+          <label for="brouchingLength" style="width: 150px;">Brouching Length :</label>
+        	<input type="text" id="brouchingLength" style="width: 200px;" value="${toolData.brouchingLength}">
+    
+     <label for="maxExpectedToolLife" style="width: 190px;">Max expected Tool life</label>
+        <input type="text" id="maxExpectedToolLife" style="width: 550px;" value="${toolData.maxExpectedToolLife}">
+        
+    </form>
+    
+     <table border="1">
+        <thead>
+            <tr>
+                
+                <th colspan="6" style="text-align: center;">Issue to Production</th>
+                <th colspan="7" style="text-align: center;">Return to Tool Room</th>
+                <th colspan="2" style="text-align: center;">Resharpening</th>
+            </tr>
+             <tr>
+               <th >Issue Date</th>
+                <th>Emp.No</th>
+                <th>Emp Name</th>
+                <th>Condition Of Brouch Tool</th>
+                <th>Signature</th>
+                <th>Remarks</th>
+                
+                <th>Return Date</th>
+                <th>Emp name</th>
+                <th>No of components produced</th>
+                <th>Cumulative qty. produced</th>
+                <th>First & last component inspection graps & MOB</th>
+                <th>Condition of Brouch Tool</th>
+                <th>Signature</th>
+                
+                                <!-- Resharpening Columns -->
+                <th>Resharpening done on</th>
+                <th>Remarks</th>
+
+                </tr>
+            </thead>
+            </table>
+</body>
+</html>

@@ -1,0 +1,268 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Your Page Title</title>
+    <!-- Add your CSS styles if needed -->
+    <style>
+        body {
+            margin: 0;
+            font-family: Arial, sans-serif;
+        }
+
+        fieldset {
+            border: 1px solid #ccc;
+            padding: 10px;
+            margin-bottom: 20px;
+            border-radius: 5px;
+            position: relative; /* Added for positioning the button */
+        }
+
+        legend {
+            font-size: 16px;
+            font-weight: bold;
+            color: #333;
+        }
+
+        label {
+            display: block;
+            margin-bottom: 5px;
+            margin-left: 5px;
+            width: 100px; /* Set the width of the label */
+            font-size: 14px;
+        }
+
+        .input-group {
+            display: flex;
+            flex-wrap: wrap; /* Allow items to wrap to the next line */
+        }
+
+        .input-group label,
+        .input-group input,
+        .input-group select,
+        .input-group textarea {
+            width: 200px; /* Set the width of the input, select, or textarea */
+            box-sizing: border-box;
+            margin-bottom: 10px;
+        }
+
+        .input-group label {
+            margin-bottom: 2px;
+            margin-right: 20px;
+        }
+
+        input[type="text"],
+        input[type="date"],
+        input[type="number"],
+        textarea,
+        select {
+            width: 200px; /* Adjusted width */
+            padding: 8px;
+            border: 1px solid #ccc;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #4CAF50;
+            color: white;
+            padding: 10px 15px;
+            border: none;
+            border-radius: 4px;
+            cursor: pointer;
+        }
+
+        button:hover {
+            background-color: #45a049;
+        }
+
+        /* Style for the toggle button */
+        .toggle-button {
+            position: absolute;
+            top: 5px;
+            right: 5px;
+            cursor: pointer;
+        }
+
+        /* Additional fields initially hidden */
+        .additional-fields {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+
+    <form id="toolForm">
+
+        <!-- First Section - Tool Information -->
+        <fieldset>
+            <legend>Tool Information</legend>
+            
+            <!-- Toggle button -->
+            <div class="toggle-button" onclick="toggleFields('additional-fields1')">+</div>
+            <!-- Additional fields (initially hidden) -->
+            <div class="input-group additional-fields additional-fields1">
+                <label for="adNo1">AD.No :</label>
+                <input type="text" id="adNo1" name="adNo" required>
+                
+                <label for="serialNoOfBrouch1">Sr.No or brouch:</label>
+                <input type="text" id="serialNoOfBrouch1" name="serialNoOfBrouch" required>
+
+                <label for="supplierNo1">Supplier No:</label>
+                <input type="text" id="supplierNo1" name="supplierNo">
+
+                <label for="supplierName1">Name of Supplier:</label>
+                <input type="text" id="supplierName1" name="supplierName">
+
+                <label for="dateProcurement1">Date of Procurement:</label>
+                <input type="date" id="dateProcurement1" name="dateProcurement" required>
+
+                <label for="partNo1">Part No:</label>
+                <input type="text" id="partNo1" name="partNo" required>
+
+                <label for="normalModule1">Normal Module:</label>
+                <input type="number" id="normalModule1" name="normalModule" required>
+
+                <label for="numTech1">No of tech:</label>
+                <input type="number" id="numTech1" name="numTech" required>
+
+                <label for="normalPressureAngle1">Normal pressure angle:</label>
+                <input type="text" id="normalPressureAngle1" name="normalPressureAngle" required>
+
+                <label for="helixAngle1">Helix Angle:</label>
+                <input type="text" id="helixAngle1" name="helixAngle" required>
+
+                <label for="materialBrouch1">Material of brouch:</label>
+                <input type="text" id="materialBrouch1" name="materialBrouch" required>
+
+                <label for="componentMaterial1">Component Material:</label>
+                <input type="text" id="componentMaterial1" name="componentMaterial" required>
+
+                <label for="landWidth1">Land width: Body/Shell:</label>
+                <input type="text" id="landWidth1" name="landWidth" required>
+
+                <label for="toolLife1">Max Expected Tool life / resharpening:</label>
+                <input type="text" id="toolLife1" name="toolLife" required>
+
+                <label for="coating1">Coating:</label>
+                <input type="text" id="coating1" name="coating">
+            </div>
+        </fieldset>
+
+         <!-- Second Section - Another Tool Information -->
+        <fieldset>
+            <legend>Issue to Production</legend>
+            
+            <!-- Toggle button -->
+            <div class="toggle-button" onclick="toggleFields('additional-fields2')">+</div>
+            <!-- Additional fields (initially hidden) -->
+            <div class="input-group additional-fields additional-fields2">
+               <label for="issueDate">Date:</label>
+                <input type="date" id="issueDate" name="issueDate" required>
+
+                <label for="empNo">Emp.No:</label>
+                <input type="text" id="empNo" name="empNo" required>
+
+                <label for="empName">Emp Name:</label>
+                <input type="text" id="empName" name="empName" required>
+
+                <label for="conditionBrouch">Condition Of Brouch Tool:</label>
+                <input type="text" id="conditionBrouch" name="conditionBrouch" required>
+
+                <label for="signatureIssue">Signature:</label>
+                <input type="text" id="signatureIssue" name="signatureIssue" required>
+				
+				 <label for="issueRemarks">Remarks:</label>
+                <textarea id="issueRemarks" name="issueRemarks"></textarea>
+            </div>
+        </fieldset>
+        
+          <fieldset>
+            <legend>Return to Tool Room</legend>
+            
+            <!-- Toggle button -->
+            <div class="toggle-button" onclick="toggleFields('additional-fields3')">+</div>
+            <!-- Additional fields (initially hidden) -->
+            <div class="input-group additional-fields additional-fields3">
+              <label for="returnDate">Date of return:</label>
+                <input type="date" id="returnDate" name="returnDate" required>
+
+                <label for="returnEmpName">Emp name:</label>
+                <input type="text" id="returnEmpName" name="returnEmpName" required>
+
+                <label for="componentsProduced">No of components produced:</label>
+                <input type="number" id="componentsProduced" name="componentsProduced" required>
+
+                <label for="cumulativeQty">Cumulative qty. produced:</label>
+                <input type="number" id="cumulativeQty" name="cumulativeQty" required>
+
+                <label for="inspectionGraps">First & last component inspection graps & MOB:</label>
+                <textarea id="inspectionGraps" name="inspectionGraps" required></textarea>
+
+                <label for="conditionReturn">Condition of Brouch Tool:</label>
+                <input type="text" id="conditionReturn" name="conditionReturn" required>
+
+                <label for="signatureReturn">Signature:</label>
+                <input type="text" id="signatureReturn" name="signatureReturn" required>
+            </div>
+        </fieldset>
+         <fieldset>
+            <legend>Resharpening</legend>
+            
+            <!-- Toggle button -->
+            <div class="toggle-button" onclick="toggleFields('additional-fields4')">+</div>
+            <!-- Additional fields (initially hidden) -->
+            <div class="input-group additional-fields additional-fields4">
+                <label for="resharpeningDate">Resharpening done on:</label>
+                <input type="date" id="resharpeningDate" name="resharpeningDate" required>
+
+                <label for="resharpeningRemarks">Remarks:</label>
+                <textarea id="resharpeningRemarks" name="resharpeningRemarks"></textarea>
+            </div>
+        </fieldset>
+
+        <button type="submit" onclick="submitForm()">Submit</button>
+        
+        <button type="submit">View</button>
+    </form>
+
+    <script>
+        function toggleFields(className) {
+            const additionalFields = document.querySelector('.' + className);
+            additionalFields.style.display = additionalFields.style.display === 'none' ? 'flex' : 'none';
+        }
+ function submitForm() {
+            // Collect form data
+            const formData = new FormData(document.getElementById('toolForm'));
+
+            // Convert form data to JSON
+            const formObject = {};
+            formData.forEach((value, key) => {
+                formObject[key] = value;
+            });
+
+            // Create and send AJAX request
+            const xhr = new XMLHttpRequest();
+            xhr.open('POST', 'allison', true);
+            xhr.setRequestHeader('Content-Type', 'application/json;charset=UTF-8');
+            xhr.onreadystatechange = function () {
+                if (xhr.readyState === 4) {
+                    if (xhr.status === 200) {
+                        // Handle the response if needed
+                        console.log(xhr.responseText);
+                        // Show a pop-up indicating success
+                        window.alert('Form submitted successfully!');
+                    } else {
+                        // Handle the error case if needed
+                        console.error('Error submitting form:', xhr.statusText);
+                        // Show a pop-up indicating an error
+                        window.alert('Error submitting form. Please try again.');
+                    }
+                }
+            };
+            xhr.send(JSON.stringify(formObject));
+        }
+    </script>
+
+</body>
+</html>
