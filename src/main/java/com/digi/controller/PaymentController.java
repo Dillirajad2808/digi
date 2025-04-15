@@ -91,6 +91,7 @@ public class PaymentController {
         return deepLinkURL;
     }
 
+
     private String generatePhonePeDeepLinkWithAmount(String upiId, String merchantName, String transactionNote, Integer amount) thows UnsupportedEncodingException {
         String encodedTransactionNote = URLEncoder.encode(transactionNote, "UTF-8");
         String deepLinkURL = "upi://pay?pa=" + upiId +
@@ -100,7 +101,6 @@ public class PaymentController {
                             "&cu=INR";
         return deepLinkURL;
     }
-    
 
     private String generateQRCode(String text) {
         try {
